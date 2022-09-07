@@ -380,9 +380,7 @@ void Display::Items(NC::Menu<MPD::Item> &menu, const SongList &list)
 	switch (item.type())
 	{
 		case MPD::Item::Type::Directory:
-			menu << "["
-			     << Charset::utf8ToLocale(getBasename(item.directory().path()))
-			     << "]";
+			menu << Charset::utf8ToLocale(getBasename(item.directory().path()));
 			break;
 		case MPD::Item::Type::Song:
 			switch (Config.browser_display_mode)
